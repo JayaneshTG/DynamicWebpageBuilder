@@ -21,7 +21,7 @@ def process(request):
                 padding: 0;
             }
             body {
-                background: url(https://images.unsplash.com/photo-1527071085976-578712baa7d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80);
+                background: url(../static/images/bg.jpg),url(https://images.unsplash.com/photo-1527071085976-578712baa7d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1356&q=80);
                 background-size: cover;
                 background-position: center center;
                 color: #2C232A;
@@ -34,6 +34,12 @@ def process(request):
                 align-items: center;
                 min-height: 100vh;
             }
+
+            input[type=radio] {
+                margin-left: 20px;
+                margin-right:5px;
+            }
+
             input[type=text], select, textarea, input[type=file], input[type=password], input[type=date], input[type=email], input[type=range], input[type=number] {
                 width: 100%;
                 padding: 12px 0 12px 0px;
@@ -144,9 +150,9 @@ def generate_file(doc):
     # Git Push
     repo = Repo('./RenderedFiles')
     repo.index.add([filenameCreated + ".html"])
-    repo.index.commit('Rendered File Push'+now)
+    repo.index.commit('Rendered File Push '+now)
     origin = repo.remote('origin')
-    origin.push()
+    origin.push(force=True)
 
 def generate_text_input(input):
     html = div()

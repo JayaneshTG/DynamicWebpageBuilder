@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'>
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet" />
     <link href="{% static 'css/swiper.css' %}" rel="stylesheet" />
@@ -57,7 +58,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="h2-heading">Enter the JSON data</h2>
+            <x-sign><small>Enter the JSON data</small></x-sign>
             <form class="was-validated" action="process" method="post">
               {% csrf_token %}
               <div class="mb-3">
@@ -67,16 +68,11 @@
                   class="form-control is-invalid"
                   id="validationTextarea"
                   placeholder="Enter the JSON data"
-                  style="height: 500px"
+                  style="height: 400px"
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                class="btn btn-danger btn-block"
-              >
-                BUILD
-              </button>
+              <button type="submit" class="btn btn-danger btn-block">BUILD</button>
             </form>
           </div>
         </div>
@@ -97,8 +93,8 @@
               </p>
             </div>
             <div class="footer-col second">
-              <h6>Technology</h6>
-              <p class="p-small">Django and Python</p>
+              <h6>Languages Used</h6>
+              <p class="p-small">Python, Django, HTML, CSS and JavaScript</p>
             </div>
             <div class="footer-col third">
               <h6>Contact</h6>
